@@ -7,7 +7,7 @@ before_install:
   - docker build -t ldcamachoc/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true USERNAME/react-test npm test
+  - docker run -e CI=true ldcamachoc/react-test npm test
 
 after_success:
   - docker image build -t ldcamachoc/multi-client ./client
