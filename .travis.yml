@@ -23,7 +23,6 @@ after_success:
   - docker push ldcamachoc/multi-worker
 
 deploy:
-  edge: true
   provider: elasticbeanstalk
   region: us-east-1
   app: multidocker
