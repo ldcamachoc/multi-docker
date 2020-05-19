@@ -21,3 +21,16 @@ after_success:
   - docker push ldcamachoc/multi-nginx
   - docker push ldcamachoc/multi-server
   - docker push ldcamachoc/multi-worker
+
+deploy:
+  edge: true
+  provider: elasticbeanstalk
+  region: us-east-1
+  app: multidocker
+  env: Multidocker-env
+  bucket_name: elasticbeanstalk-us-east-1-189137563013
+  bucker_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
